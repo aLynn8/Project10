@@ -1,12 +1,14 @@
-﻿
+﻿<!--Aubrey Farnbach (Wright) Sectino 2 Group 1-->
 
 @model IndexViewModel
 
-@foreach (var x in Model.Recipes)
-            {
-                <p>@x.RecipeTitle</p>
-            }
 
-<div page-info="@Model.PageNumberingInfo" page-url-mealtype ="@Model.MealCategory">
+
+@foreach (var x in Model.Recipes)
+{
+    <p>@x.RecipeTitle</p>
+}
+
+<div page-info="@Model.PageNumberingInfo" page-url-mealtype="@Model.MealCategory">
 
 </div>

@@ -1,5 +1,7 @@
 using System;
 
+//Aubrey Farnbach (Wright) Section 2 Group 1
+
 namespace SharpenTheSaw.Models
 {
     public class ErrorViewModel
