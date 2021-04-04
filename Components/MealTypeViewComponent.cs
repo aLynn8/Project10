@@ -18,6 +18,8 @@ namespace SharpenTheSaw.Components
 
         public IViewComponentResult Invoke()
         {
+            //Pull data from route at the top to get the selected meal type
+            ViewBag.SelectedType = RouteData?.Values["mealtype"];
             
             return View(context.RecipeClasses
                 .Distinct()

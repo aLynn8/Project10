@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<RecipeClasses>
 
-<a asp-action="Index" asp-controller="Home" asp-route-mealtypeid="">Home</a>
+<a class="btn btn-block btn-outline-secondary" asp-action="Index" asp-controller="Home" asp-route-mealtypeid="">Home</a>
 <br />
 
 @foreach (var x in Model)
 {
-    <a asp-action="Index" asp-controller="Home" asp-route-mealtypeid="@x.RecipeClassId"
+    <a class="btn btn-block @(x.RecipeClassDescription == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")"
+       asp-action="Index" asp-controller="Home" asp-route-mealtypeid="@x.RecipeClassId"
        asp-route-mealtype="@x.RecipeClassDescription">@x.RecipeClassDescription</a>
     <br />
 }

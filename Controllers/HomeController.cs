@@ -26,6 +26,9 @@ namespace SharpenTheSaw.Controllers
         {
             int pageSize = 5;
 
+            //Builds Title, with a dividing pipe and mealtype if mealtype is not null
+            ViewData["Title"] = (mealtype != null ? (" | " + mealtype) : mealtype);
+
             return View(new IndexViewModel
             {
                 Recipes = (context.Recipes
