@@ -10,7 +10,7 @@ namespace SharpenTheSaw.Models.ViewModels
 {
     public class IndexViewModel
     {
-        public List<Recipes> Recipes { get; set; }
+        public List<Bowlers> Bowlers { get; set; }
         public PageNumberingInfo PageNumberingInfo { get; set; }
         public string MealCategory { get; set; }
     }

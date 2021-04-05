@@ -29,8 +29,8 @@ namespace SharpenTheSaw
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<RecipesContext>(options =>
-                options.UseSqlite(Configuration["ConnectionStrings:RecipesDbConnection"]));
+            services.AddDbContext<BowlingLeagueContext>(options =>
+                options.UseSqlite(Configuration["ConnectionStrings:BowlingLeagueDbConnection"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,12 +55,13 @@ namespace SharpenTheSaw
 
             app.UseEndpoints(endpoints =>
             {
+                //I don' know if I should change mealtypepagenum
                 endpoints.MapControllerRoute("mealtypepagenum",
-                    "MealType/{mealtypeid}/{mealtype}/{pagenum}",
+                    "MealType/{teamid}/{team}/{pagenum}",
                     new { Controller = "Home", action = "Index" });
-
+                //I don' know if I should change mealtypeid
                 endpoints.MapControllerRoute("mealtypeid",
-                    "MealType/{mealtypeid}/{mealtype}",
+                    "MealType/{teamid}/{team}",
                     new {Controller = "Home", action = "Index", pagenum = 1}
                     );
 

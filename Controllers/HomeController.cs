@@ -15,26 +15,26 @@ namespace SharpenTheSaw.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private RecipesContext context { get; set; }
+        private BowlingLeagueContext context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, RecipesContext ctx)
+        public HomeController(ILogger<HomeController> logger, BowlingLeagueContext ctx)
         {
             _logger = logger;
             context = ctx;
         }
 
-        public IActionResult Index(long? mealtypeid, string mealtype, int pageNum = 0)
+        public IActionResult Index(long? teamid, string team, int pageNum = 0)
         {
             int pageSize = 5;
 
             //Builds Title, with a dividing pipe and mealtype if mealtype is not null
-            ViewData["Title"] = (mealtype != null ? (" | " + mealtype) : mealtype);
+            ViewData["Title"] = (team != null ? (" | " + team) : team);
 
             return View(new IndexViewModel
             {
-                Recipes = (context.Recipes
-                    .Where(m => m.RecipeClassId == mealtypeid || mealtypeid == null)
-                    .OrderBy(m => m.RecipeTitle)
+                Bowlers = (context.Bowlers
+                    .Where(m => m.TeamId == teamid || teamid == null)
+                    .OrderBy(m => m.BowlerLastName)
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize)
                     .ToList()),
@@ -44,11 +44,11 @@ namespace SharpenTheSaw.Controllers
                     NumItemsPerPage = pageSize,
                     CurrentPage = pageNum,
                     //If not meal has been selected then use count of all, else only cout those with the meal type selected
-                    TotalNumItems = (mealtypeid == null ? context.Recipes.Count() : 
-                    context.Recipes.Where(x => x.RecipeClassId == mealtypeid).Count())
+                    TotalNumItems = (teamid == null ? context.Bowlers.Count() : 
+                    context.Bowlers.Where(x => x.TeamId == teamid).Count())
                 },
 
-                MealCategory = mealtype
+                MealCategory = team
             });
                
         }

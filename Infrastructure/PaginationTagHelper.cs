@@ -25,6 +25,7 @@ namespace SharpenTheSaw.Infrastructure
         }
 
         public PageNumberingInfo PageInfo { get; set; }
+        //I think I'm stll using the variable MealType as I switch to Bowlers, but for teams. Not 100% sure though
         public string MealType { get; set; }
 
         //Build dictionary with our own key value pairs

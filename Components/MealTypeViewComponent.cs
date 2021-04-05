@@ -10,9 +10,9 @@ namespace SharpenTheSaw.Components
 {
     public class MealTypeViewComponent : ViewComponent
     {
-        private RecipesContext context;
+        private BowlingLeagueContext context;
         
-        public MealTypeViewComponent(RecipesContext ctx)
+        public MealTypeViewComponent(BowlingLeagueContext ctx)
         {
             context = ctx;
         }
@@ -20,9 +20,9 @@ namespace SharpenTheSaw.Components
         public IViewComponentResult Invoke()
         {
             //Pull data from route at the top to get the selected meal type
-            ViewBag.SelectedType = RouteData?.Values["mealtype"];
+            ViewBag.SelectedType = RouteData?.Values["teamid"];
             
-            return View(context.RecipeClasses
+            return View(context.Teams
                 .Distinct()
                 .OrderBy(x => x));
         }

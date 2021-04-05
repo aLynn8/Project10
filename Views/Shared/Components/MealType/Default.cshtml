@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RecipeClasses>
+﻿@model IEnumerable<Teams>
 <!--Aubrey Farnbach (Wright) Sectino 2 Group 1-->
 <!--This displays the Recipe select list users can filter with-->
 <a class="btn btn-block btn-outline-secondary" asp-action="Index" asp-controller="Home" asp-route-mealtypeid="">Home</a>
@@ -6,8 +6,8 @@
 
 @foreach (var x in Model)
 {
-    <a class="btn btn-block @(x.RecipeClassDescription == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")"
-       asp-action="Index" asp-controller="Home" asp-route-mealtypeid="@x.RecipeClassId"
-       asp-route-mealtype="@x.RecipeClassDescription">@x.RecipeClassDescription</a>
+    <a class="btn btn-block @(x.TeamName == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")"
+       asp-action="Index" asp-controller="Home" asp-route-mealtypeid="@x.TeamId"
+       asp-route-mealtype="@x.TeamName">@x.TeamName</a>
     <br />
 }
