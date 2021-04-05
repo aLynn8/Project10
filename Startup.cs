@@ -56,14 +56,14 @@ namespace SharpenTheSaw
             app.UseEndpoints(endpoints =>
             {
                 //I don' know if I should change mealtypepagenum
-                endpoints.MapControllerRoute("mealtypepagenum",
-                    "MealType/{teamid}/{team}/{pagenum}",
+                endpoints.MapControllerRoute("teamtypepagenum",
+                    "TeamType/{teamid}/{team}/{pagenum?}",
                     new { Controller = "Home", action = "Index" });
-                //I don' know if I should change mealtypeid
-                endpoints.MapControllerRoute("mealtypeid",
-                    "MealType/{teamid}/{team}",
-                    new {Controller = "Home", action = "Index", pagenum = 1}
-                    );
+                ////I don' know if I should change mealtypeid
+                //endpoints.MapControllerRoute("teamtypeid",
+                //    "MealType/{teamid}/{team}",
+                //    new {Controller = "Home", action = "Index", pagenum = 1}
+                //    );
 
                 endpoints.MapControllerRoute("pagenum",
                     "{pagenum}",

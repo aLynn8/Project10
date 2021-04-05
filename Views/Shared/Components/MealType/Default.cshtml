@@ -7,7 +7,7 @@
 @foreach (var x in Model)
 {
     <a class="btn btn-block @(x.TeamName == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")"
-       asp-action="Index" asp-controller="Home" asp-route-mealtypeid="@x.TeamId"
-       asp-route-mealtype="@x.TeamName">@x.TeamName</a>
+       asp-action="Index" asp-controller="Home" asp-route-teamtypeid="@x.TeamId"
+       asp-route-teamtype="@x.TeamName">@x.TeamName</a>
     <br />
 }
