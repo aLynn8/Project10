@@ -12,6 +12,6 @@ namespace SharpenTheSaw.Models.ViewModels
     {
         public List<Bowlers> Bowlers { get; set; }
         public PageNumberingInfo PageNumberingInfo { get; set; }
-        public string MealCategory { get; set; }
+        public string TeamCategory { get; set; }
     }
 }

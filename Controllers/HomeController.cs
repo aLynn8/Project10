@@ -48,7 +48,7 @@ namespace SharpenTheSaw.Controllers
                     context.Bowlers.Where(x => x.TeamId == teamid).Count())
                 },
 
-                MealCategory = team
+                TeamCategory = team
             });
                
         }
