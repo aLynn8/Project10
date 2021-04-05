@@ -6,7 +6,7 @@
 
 @foreach (var x in Model)
 {
-    <a class="btn btn-block @(x.TeamId == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")"
+    <a class="btn btn-block @(x.TeamId.ToString() == ViewBag.SelectedType ? "btn-primary" : "btn-outline-secondary")"
        asp-action="Index" asp-controller="Home" asp-route-teamid="@x.TeamId"
        asp-route-team="@x.TeamName">@x.TeamName</a>
     <br />
